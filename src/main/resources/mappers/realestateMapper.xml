@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.quiz.lesson03.mapper.RealestateMapper">
+	<select id="selectRealestate" parameterType="int" resultType="com.quiz.lesson03.domain.Realestate">
+		SELECT
+			updatedAt,
+			type,
+			rentPrice,
+			realtorId,
+			price,
+			id,
+			createdAt,
+			area,
+			address
+		FROM 
+		`real_estate` where id=#{id}
+	</select>
+	<select id="selectRealestateRentPrice" parameterType="int" resultType="com.quiz.lesson03.domain.Realestate">
+		SELECT
+			updatedAt,
+			type,
+			rentPrice,
+			realtorId,
+			price,
+			id,
+			createdAt,
+			area,
+			address
+		FROM 
+		`real_estate` 
+		where 
+		<![CDATA[
+        rentPrice< #{rent_price}
+        ]]>
+	</select>
+	<select id="selectRealestate3" parameterType="hashMap" resultType="com.quiz.lesson03.domain.Realestate">
+		SELECT
+			updatedAt,
+			type,
+			rentPrice,
+			realtorId,
+			price,
+			id,
+			createdAt,
+			area,
+			address
+		FROM 
+		`real_estate` 
+		where 
+		<![CDATA[
+        area >= #{area}
+        and 
+        price <= #{price}
+        ]]>
+	</select>
+</mapper>
