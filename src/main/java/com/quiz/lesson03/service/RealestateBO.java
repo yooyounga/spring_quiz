@@ -23,4 +23,11 @@ public class RealestateBO {
 	public List<Realestate> getRealestate3(int area,int price){
 		return realestateMapper.selectRealestate3(area,price);
 	}
+	
+	public int addNewRealestateInsert(Realestate realestate){
+		return realestateMapper.insertRealestate(realestate);
+	}
+	public int addNewRealestateInsertbyRealtorId(int realtorId,String address,int area,String type,int price,Integer rentPrice){
+		return realestateMapper.insertRealestatebyRealtorId(realtorId,address,area,type,price,rentPrice);
+	}
 }
