@@ -102,4 +102,14 @@
 			,now()
 		) 
 	</insert>
+	<update id="updateRealestatebyId" parameterType="map">
+		UPDATE real_estate 
+		SET type=#{type}
+			,price=#{price}
+			,updatedAt=now()
+		WHERE id=#{id}
+	</update>
+	<delete id="deleteRealestatebyId" parameterType="int">
+		DELETE from real_estate WHERE id=#{id}
+	</delete>
 </mapper>

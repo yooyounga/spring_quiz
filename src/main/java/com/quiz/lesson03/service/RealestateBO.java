@@ -30,4 +30,10 @@ public class RealestateBO {
 	public int addNewRealestateInsertbyRealtorId(int realtorId,String address,int area,String type,int price,Integer rentPrice){
 		return realestateMapper.insertRealestatebyRealtorId(realtorId,address,area,type,price,rentPrice);
 	}
+	public int updateRealestatebyId(int id,String type,int price){
+		return realestateMapper.updateRealestatebyId(id,type,price);
+	}
+	public int deleteRealestatebyId(int id){
+		return realestateMapper.deleteRealestatebyId(id);
+	}
 }
