@@ -19,7 +19,6 @@ public class Lesson04Quiz01Controller {
 		
 		return "/lesson04/addseller";
 	}
-	
 	@PostMapping("/add-seller")
 	public String addSeller(
 		@RequestParam("nickname") String nickname
@@ -30,5 +29,11 @@ public class Lesson04Quiz01Controller {
 		addSellerBO.addseller(nickname, profileImageUrl, temperature);
 		
 		return "/lesson04/afteraddseller";
+	}
+	//판매자 보여주기
+	@RequestMapping("/seller-info-view")
+	public String sellerInfoView() {
+		//DB select
+		return "/lesson04/sellerinfo";
 	}
 }
