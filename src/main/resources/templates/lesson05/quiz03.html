@@ -25,7 +25,8 @@
 			<tr th:each="member,status: ${members}">
 				<td th:text="${status.count}"></td>
 				<td th:text="${member.Name}"></td>
-				<td th:text="${member.Birth}"></td>
+				<!-- <td th:text="${member.Birth}"></td> -->
+				<td th:text="${#temporals.format(member.Birth,'yyy년 MM월 dd일')}"></td>
 				<td>
 					<span th:if="${#strings.startsWith(member.PhoneNumber,'010')}"  th:text="${member.PhoneNumber}"></span>
 					<span th:unless="${#strings.startsWith(member.PhoneNumber,'010')}">유효하지 않은 번호</span>
