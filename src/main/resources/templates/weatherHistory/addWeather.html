@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+		<h1>중개사 추가</h1>
+		<form method="post" action="/weatherHistory/weather-list-view">
+			<div class="form-group">
+				<label for="date">날짜</label>
+				<input type="text" id="date" name="date" ></input>
+			</div>
+			<div class="form-group">
+				<label for="weather">날씨</label>
+				<select id="weather" name="weather">
+					<option value="맑음">맑음</option>
+					<option value="흐림">흐림</option>
+					<option value="구름조금">구름조금</option>
+					<option value="비">비</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="microDust">미세먼지</label>
+				<select id="microDust" name="microDust">
+					<option value="보통">보통</option>
+					<option value="좋음">좋음</option>
+					<option value="나쁨">나쁨</option>
+					<option value="최악">최악</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="temperatures">기온</label>
+				<input type="text" id="temperatures" name="temperatures" >°C</input>
+			</div>
+			<div class="form-group">
+				<label for="precipitation">강수량</label>
+				<input type="text" id="precipitation" name="precipitation" >mm</input>
+			</div>
+			<div class="form-group">
+				<label for="windSpeed">풍속</label>
+				<input type="text" id="windSpeed" name="windSpeed" >km/h</input>
+			</div>
+			<input type="submit" value="추가" class="btn btn-info"></input>
+		</form>
+	</div>
+</body>
+</html>
